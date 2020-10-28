@@ -1,0 +1,24 @@
+{
+  "name": "hacker-nextjs",
+  "version": "1.0.0",
+  "description": "A Hacker News Clone made with Next.js",
+  "main": "server.js",
+  "scripts": {
+    "dev": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/florianbar/hacker-nextjs.git"
+  },
+  "author": "Florian Bar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/florianbar/hacker-nextjs/issues"
+  },
+  "homepage": "https://github.com/florianbar/hacker-nextjs#readme",
+  "dependencies": {
+    "next": "^10.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
