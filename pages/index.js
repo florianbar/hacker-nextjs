@@ -1,5 +1,6 @@
 import Error from 'next/error';
 
+import Layout from '../components/Layout';
 import StoryList from '../components/StoryList';
 
 export async function getStaticProps(context) {
@@ -25,9 +26,8 @@ export default function Index({ stories }) {
     }
 
     return (
-        <div>
-            <h1>Hacker Next</h1>
+        <Layout title="Hacker Next" description="A Hacker News Clone made with Next.js">
             <StoryList stories={stories} />
-        </div>
+        </Layout>
     );
 };
