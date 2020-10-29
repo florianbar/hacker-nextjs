@@ -1,17 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
-//import Router from 'next/router';
-//import NProgress from 'nprogress';
+import Router from 'next/router';
 
-// Router.onRouteChangeStart = url => {
-//     console.log(url);
-//     NProgress.start();
-// };
-
-// Router.onRouteChangeComplete = () => NProgress.done();
-// Router.onRouteChangeError = () => NProgress.done();
-
-export default function Layout({ children, title, description }) {
+export default function Layout({ children, title, description, backButton }) {
     return (
         <div>
             <Head>
@@ -21,6 +12,14 @@ export default function Layout({ children, title, description }) {
 
             <div className="container">
                 <nav>
+                    {backButton && (
+                        <span 
+                            className="back-button"
+                            onClick={() => Router.back()} 
+                        >
+                            &#x2b05;
+                        </span>
+                    )}
                     <Link href="/">
                         <a>
                             <span className="main-title">Hacker Next</span>
@@ -36,6 +35,7 @@ export default function Layout({ children, title, description }) {
                         margin: 0 auto;
                         background: #f6f6ef;
                     }
+
                     nav {
                         background: #f60;
                         padding: 1em;
@@ -49,6 +49,11 @@ export default function Layout({ children, title, description }) {
                     }
                     nav .main-title {
                         font-weight: bold;
+                    }
+                    nav .back-button {
+                        font-size: 1rem;
+                        padding-right: 1em;
+                        cursor: pointer;
                     }
                 `}</style>
                 <style global jsx>{`
